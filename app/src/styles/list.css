@@ -1,0 +1,24 @@
+.ShopListMain h1 {
+	color: #2c3e50;
+}
+
+.ShopListMain .link {
+	padding-bottom: 60px;
+}
+
+.ShopListMain .theList li {
+	color: #333;
+	background: #f1c40f;
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	list-style: none;
+}
+ul.theList {
+	padding-top: 45px;
+}
+
+.ShopListMain .theList li:hover {
+	background-color: #55efc4;
+	cursor: pointer;
+}

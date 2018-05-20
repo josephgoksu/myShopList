@@ -1,0 +1,11 @@
+body {
+	padding: 50px;
+	background: #ecf0f1;
+	background-repeat: repeat;
+	font-family: sans-serif;
+}
+
+#root {
+	display: flex;
+	justify-content: center;
+}
