@@ -3,10 +3,6 @@ import React, { Component } from 'react';
 class ActiveItems extends Component {
 	constructor(props) {
 		super(props);
-
-		// this.state = {
-		// 	items: []
-		// };
 	}
 
 	delete(key) {
