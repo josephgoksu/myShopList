@@ -18,7 +18,7 @@ class ShopList extends Component {
 	}
 
 	componentDidMount() {
-		axios.get(`http://localhost:3001/api/all`).then(res => {
+		axios.get(`http://35.234.83.110/api/all`).then(res => {
 			const getList = res.data.items;
 
 			getList.map(res => {
@@ -43,7 +43,7 @@ class ShopList extends Component {
 		});
 
 		axios
-			.delete(`http://localhost:3001/api/`, {
+			.delete(`http://35.234.83.110/api/`, {
 				data: { content_id: key }
 			})
 			.then(res => {
@@ -64,7 +64,7 @@ class ShopList extends Component {
 			};
 
 			axios
-				.post(`http://localhost:3001/api/`, {
+				.post(`http://35.234.83.110/api/`, {
 					content: newItem.content,
 					status: newItem.status
 				})
