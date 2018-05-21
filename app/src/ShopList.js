@@ -37,6 +37,10 @@ class ShopList extends Component {
 		});
 	}
 
+	changeItem(key) {
+		console.log(key);
+	}
+
 	deleteItem(key) {
 		var filteredItems = this.state.items.filter(function(item) {
 			return item.key !== key;
@@ -69,18 +73,20 @@ class ShopList extends Component {
 					status: newItem.status
 				})
 				.then(res => {
-					console.log('API Respond');
-					console.log(res.data);
-					let newState = {
-						text: res.data.content,
-						status: res.data.status,
-						key: res.data._id
-					};
-					return this.setState(prevState => {
-						return {
-							items: prevState.items.concat(newState)
+					if (res.data.code === 'E11000') {
+						return alert('you already add this');
+					} else {
+						let newState = {
+							text: res.data.content,
+							status: res.data.status,
+							key: res.data._id
 						};
-					});
+						return this.setState(prevState => {
+							return {
+								items: prevState.items.concat(newState)
+							};
+						});
+					}
 				})
 				.then(value => {
 					console.log(value);
@@ -94,32 +100,27 @@ class ShopList extends Component {
 	render() {
 		return (
 			<Row>
-				<Col s={12}>
+				<Col s={8}>
 					<div className="ShopListMain">
 						<Header />
 						<div className="header">
 							<form onSubmit={this.handleSubmit}>
-								<input
-									ref={a => {
-										this._inputElement = a;
-									}}
-									placeholder="enter an item"
-								/>
 								<Col s={7}>
+									<input
+										ref={a => {
+											this._inputElement = a;
+										}}
+										placeholder="enter an item"
+									/>
+								</Col>
+								<Col s={5}>
 									<Button waves="light">
 										<Icon left>playlist_add</Icon>add
 									</Button>
 								</Col>
-								<Col s={5}>
-									<Button waves="light">
-										<Icon left>clear</Icon>clear
-									</Button>
-								</Col>
 							</form>
 						</div>
-						<Col s={12}>
-							<ActiveList entries={this.state.items} delete={this.deleteItem} />
-						</Col>
+						<ActiveList entries={this.state.items} delete={this.deleteItem} />
 					</div>
 				</Col>
 			</Row>
