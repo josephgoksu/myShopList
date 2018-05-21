@@ -22,3 +22,7 @@ ul.theList {
 	background-color: #55efc4;
 	cursor: pointer;
 }
+
+.ShopListMain .theList .items {
+	color: blue;
+}
