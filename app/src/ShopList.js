@@ -47,7 +47,7 @@ class ShopList extends Component {
 				data: { content_id: key }
 			})
 			.then(res => {
-				console.log(res);
+				console.log(res.data);
 				this.setState({
 					items: filteredItems
 				});
