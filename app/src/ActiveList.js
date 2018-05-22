@@ -1,36 +1,54 @@
 import React, { Component } from 'react';
+import { Col, Button } from 'react-materialize';
 
-class ActiveItems extends Component {
-	constructor(props) {
-		super(props);
-	}
-
+class ActiveList extends Component {
 	delete(key) {
 		this.props.delete(key);
 	}
 
-	returnEntries(data) {
-		return (
-			<li
-				onClick={() => {
-					this.delete(data.key);
-				}}
-				key={data.key}
-			>
-				{data.text}
-			</li>
-		);
+	status(key) {
+		this.props.keyItem(key);
 	}
 
 	render() {
 		return (
-			<ul className="theList">
-				{this.props.entries.map(data => {
-					return this.returnEntries(data);
-				})}
-			</ul>
+			<div>
+				<ul className="theList">
+					{this.props.entries.map(data => {
+						if (data.status === false) {
+							return (
+								<div key={data.key}>
+									<Col s={8}>
+										<li
+											onClick={() => {
+												this.status(data.key);
+											}}
+										>
+											{data.text}
+										</li>
+									</Col>
+									<Col s={2}>
+										<Button
+											onClick={() => {
+												this.delete(data.key);
+											}}
+											floating
+											large
+											className="red"
+											waves="light"
+											icon="delete"
+										/>
+									</Col>
+								</div>
+							);
+						} else {
+							<p>list empty</p>;
+						}
+					})}
+				</ul>
+			</div>
 		);
 	}
 }
 
-export default ActiveItems;
+export default ActiveList;

@@ -9,7 +9,7 @@
 .ShopListMain .theList li {
 	color: #333;
 	background: #f1c40f;
-	padding: 15px;
+	padding: 17px;
 	margin-bottom: 15px;
 	border-radius: 5px;
 	list-style: none;
@@ -25,4 +25,26 @@ ul.theList {
 
 .ShopListMain .theList .items {
 	color: blue;
+}
+
+.theListDone li {
+	color: #333;
+	background-color: #55efc4;
+	padding: 10px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	list-style: none;
+}
+ul.theListDone {
+	padding-top: 45px;
+}
+
+.saga {
+	color: green;
+	margin-left: 65px;
+}
+
+.buttonClass {
+	margin-top: 30px;
+	margin-left: 65px;
 }
