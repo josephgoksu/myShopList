@@ -1,5 +1,5 @@
 # myShopList
-* Example app with the following techs. [Demo Link](http://35.234.113.121/)
+* Example app with the following techs. [Demo Link - REMOVED!]()
 * ***NodeJS***
 * ***Express***
 * ***React 16.3.2*** 
